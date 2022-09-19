@@ -175,7 +175,7 @@ header {
 
 .content {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     background-image: url(./img/mine.jpg);
 }
 
