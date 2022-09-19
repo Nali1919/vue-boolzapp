@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="js/script.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js"
         integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -23,6 +23,7 @@
         <div id="webApp" class="web-app">
 
             <!-- PART LEFT -->
+
             <aside>
                 <div class="head flex">
                     <div class="profile flex">
@@ -53,7 +54,8 @@
                     <ul>
                         <li class="list-contact" v-for="(contact , i) in contacts"
                             :class="{active : i === activeProfile}" @click="setActiveIndex(i)" v-if="contact.visible">
-                            <div class="flex space-between">
+                            <div class="flex space-between align">
+                                <!--align center text message-->
                                 <div class="card flex">
                                     <img :src="contacts[i].avatar" alt="contacts[i].avatar">
                                     <div>
@@ -62,7 +64,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <p>{{contacts[i].messages[contacts[i].messages.length - 1].date}}</p>
+                                    <p class="paddingleft">{{contacts[i].messages[contacts[i].messages.length -
+                                        1].date}}</p>
                                 </div>
                             </div>
                         </li>
@@ -70,11 +73,12 @@
                 </div>
             </aside>
 
+
             <!-- PART RIGHT -->
             <main>
                 <header class="flex space-between">
                     <div class="contact">
-                        <div class="flex align-items">
+                        <div class="flex align-items align">
                             <img class="contact" :src="contacts[activeProfile].avatar"
                                 :alt="contacts[activeProfile].name">
                             <p>{{contacts[activeProfile].name}}</p>
